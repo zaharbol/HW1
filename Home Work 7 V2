@@ -1,0 +1,72 @@
+package Animals;
+
+public class Main {
+ public static void main(String[] args) {
+ Cat catOne = new Cat("Sima", 2, "Abyssinian", 11);
+ catOne.aboutMeCat();
+ Cat catTwo = new Cat("Tade", 3, "Abyssinian", 13);
+ catOne.aboutMeCat();
+
+ Dog dogOne = new Dog("Rex", 7, "Husky", 17);
+ Dog dogTwo = new Dog("Bob", 5, "American Shepherd", 23);
+ dogTwo.aboutMeDog();
+
+
+
+    }
+}
+
+
+
+package Animals;
+
+public class Cat {
+ String nameCat;
+ int ageCat;
+ String breedCat;
+ int weightCat;
+
+ public Cat(String nameCat, int ageCat, String breedCat, int weightCat) {
+ this.nameCat = nameCat;
+ this.ageCat = ageCat;
+ this.breedCat = breedCat;
+ this.weightCat = weightCat;
+
+    }
+ public void aboutMeCat() {
+ System.out.println("Cat:) ");
+ System.out.println("Cat name: " + this.nameCat);
+ System.out.println("Cat age: " + this.ageCat);
+ System.out.println("Cat breed: " + this.breedCat);
+        System.out.println("Cat weight: " + this.weightCat);
+
+
+
+    }
+}
+
+
+package Animals;
+
+public class Dog {
+    String nameDog;
+    int ageDog;
+    String breedDog;
+    int weightDog;
+
+    public Dog(String nameDog, int ageDog, String breedDog, int weightDog) {
+        this.nameDog = nameDog;
+        this.ageDog = ageDog;
+        this.breedDog = breedDog;
+        this.weightDog = weightDog;
+
+
+    }
+    public void aboutMeDog() {
+        System.out.println("Dog:) ");
+        System.out.println("Dog name: " + this.nameDog);
+        System.out.println("Dog age: " + this.ageDog);
+        System.out.println("Dog breed: " + this.breedDog);
+        System.out.println("Dog weight: " + this.weightDog);
+    }
+}
