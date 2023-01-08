@@ -1,0 +1,113 @@
+
+import java.util.Scanner;
+import java.util.Random;
+public class Main {
+
+    public static void main(String[] args) {
+        Random rnd = new Random();
+        Scanner scan = new Scanner(System.in);
+
+        char[][] arr = new char[3][3];
+        int a = 97;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                arr[i][j] = (char) a;
+                a++;
+            }
+        }
+        for (char[] var : arr) {
+            for (char var2 : var) {
+                System.out.print(" [" + var2 + "] ");
+            }
+            System.out.println("");
+            System.out.println("");
+        }
+        int hod = 0;
+        while (hod < 10) {
+            hod++;
+            System.out.print("Ходит 1 игрок (крестик) выберите букву где будет Х:");
+            char b = scan.nextLine().charAt(0);
+            for (int i = 0; i < arr.length; i++) {
+                for (int j = 0; j < arr[i].length; j++) {
+                    if (arr[i][j] == b) {
+                        arr[i][j] = (char) 120;
+                    }
+                }
+            }
+
+            for (int i = 0, j = 0; i < arr.length; i++) {
+                if (arr[i][j] == arr[i][j + 1] && arr[i][j] == arr[i][j + 2]) {
+                    System.out.println("Победил 1 игрок");
+                    break;
+                }
+            }
+            for (int i = 0, j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] == arr[i + 1][j] && arr[i][j] == arr[i + 2][j]) {
+                    System.out.println("Победил 1 игрок");
+                    break;
+                }
+            }
+            for (int i = 0, j = 0; i<1; i++) {
+                if (arr[i][j] == arr[i + 1][j + 1] && arr[i][j] == arr[i + 2][j + 2]) {
+                    System.out.println("Победил 1 игрок");
+                    break;
+                }
+                else if (arr[i][j+2] == arr[i + 1][j + 1] && arr[i][j] == arr[i + 2][j]) {
+                    System.out.println("Победил 1 игрок");
+                    break;
+                }
+            }
+
+            for (char[] var : arr) {
+                for (char var2 : var) {
+                    System.out.print(" [" + var2 + "] ");
+                }
+                System.out.println("");
+
+                System.out.println("");
+            }
+            hod++;
+            System.out.print("Ходит 2 игрок (нолик) выберите букву где будет O:");
+            b = scan.nextLine().charAt(0);
+            for (int i = 0; i < arr.length; i++) {
+                for (int j = 0; j < arr[i].length; j++) {
+                    if (arr[i][j] == b) {
+                        arr[i][j] = (char) 111;
+                    }
+                }
+            }
+
+            for (int i = 0, j = 0; i < arr.length; i++) {
+                if (arr[i][j] == arr[i][j + 1] && arr[i][j] == arr[i][j + 2]) {
+                    System.out.println("Победил 2 игрок");
+                    break;
+                }
+            }
+            for (int i = 0, j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] == arr[i + 1][j] && arr[i][j] == arr[i + 2][j]) {
+                    System.out.println("Победил 2 игрок");
+                    break;
+                }
+            }
+            for (int i = 0, j = 0; i<1; i++) {
+                if (arr[i][j] == arr[i + 1][j + 1] && arr[i][j] == arr[i + 2][j + 2]) {
+                    System.out.println("Победил 2 игрок)");
+                    break;
+                }
+                else if (arr[i][j+2] == arr[i + 1][j + 1] && arr[i][j] == arr[i + 2][j]) {
+                    System.out.println("Победил 2 игрок");
+                    break;
+                }
+            }
+            for (char[] var : arr) {
+                for (char var2 : var) {
+                    System.out.print(" [" + var2 + "] ");
+                }
+                System.out.println("");
+
+                System.out.println("");
+            }
+        }
+        System.out.println("Ничья, осады не будет!");
+    }
+}
